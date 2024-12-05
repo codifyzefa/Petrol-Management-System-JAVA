@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+
+public class Customer extends Person {
+    
+ private int customerID;
+
+ public Customer()
+ {
+   super();
+ }
+ public Customer(String name,String Address,int age,String Email,int customerID)
+ {
+
+   super(name,Address,Email,age);
+   this.customerID=customerID;
+
+ }
+ public Customer(Customer customer)
+ {
+   super(customer);
+   this.customerID=customer.customerID;
+ }
+ public void setter()
+ {
+
+   super.setter();
+   Scanner sc =new Scanner(System.in);
+   System.out.println("Enter the Customer ID : ");
+   customerID=sc.nextInt();
+ }
+ public void display()
+ {
+
+   super.display();
+   System.out.println("Customer ID is : "+customerID);
+
+ }
+public int getCustomerID() 
+{
+    return customerID;
+}
+ 
+}
