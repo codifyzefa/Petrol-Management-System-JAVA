@@ -1,0 +1,112 @@
+import java.util.Scanner;
+
+public class Transaction 
+{
+    Customer customer[];
+    Employee employee[];
+    fuelType fueltype[];
+    Station station[];
+    private int customerid;
+    private int employeeid;
+    private int fuelid;
+    private int stationid;
+    double Total;
+    int quantity;
+    int transactionID;
+    int customerExit=-1;
+    int employeeExit=-1;
+    int fuelExit=-1;
+    int stationExit=-1;
+    public Transaction()
+    {
+        quantity=0;
+        transactionID=0;
+    }
+    public Transaction(int quantity,int transactionID,Customer [] customer,Employee [] employee,fuelType [] fueltype,Station [] station)
+    {
+        this.quantity=quantity;
+        this.transactionID=transactionID;
+        this.customer=customer;
+        this.employee=employee;
+        this.fueltype=fueltype;
+        this.station=station;
+    }
+    public int setter(Customer [] customer,Employee [] employee,Station [] station,fuelType [] fueltype)
+    {
+        this.customer=customer;
+        this.employee=employee;
+        this.station=station;
+        fueltype=fueltype;
+
+        System.out.println("Enter Transcation ID : ");
+        Scanner sc =new Scanner(System.in);
+        transactionID=sc.nextInt();
+
+        System.out.println("Enter Customer ID : ");
+        customerid=sc.nextInt();
+        for(int i=0;i<customerCount;i++)
+        {
+            if(customer[i].getCustomerID()==customerid)
+            {
+                customerExit=1;
+            }
+
+        }
+        if(customerExit==-1)
+        {
+            System.out.println("Customer not Exists ");
+            return 0;
+        }
+        System.out.println("Enter Employee ID : ");
+        employeeid=sc.nextInt();
+        for(int i=0;i<employeeCount;i++)
+        {
+            if(employee[i].getEmployeeID()==employeeid)
+            {
+                employeeExit=1;
+            }
+        }
+        if(employeeExit==-1)
+        {
+            System.out.println("Employee not Exits");
+            return 0;
+        }
+        System.out.println("Enter Station ID : ");
+        stationid=sc.nextInt();
+        for(int i=0;i<stationCount;i++)
+        {
+            if(station[i].getStationID()==stationid)
+            {
+                stationExit=1;
+            }
+        }
+        if(stationExit==-1)
+        {
+            System.out.println("Station not Exits");
+            return 0;
+        }
+        System.out.println("Enter Fuel ID : ");
+        fuelid=sc.nextInt();
+        for(int i=0;i<fuelCount;i++)
+        {
+            if(fueltype[i].getFuelID()==fuelid)
+            {
+                fuelExit=i;
+            }
+        }
+        if(fuelExit==-1)
+        {
+            System.out.println("Fuel Type not Exits");
+            return 0;
+        }
+
+        System.out.println("Enter the Quantity of Fuel");
+        quantity=sc.nextInt();
+
+        Total=quantity*fueltype[fuelExit].getPricePerlitre();
+        return 1;
+
+    }
+
+    
+}
