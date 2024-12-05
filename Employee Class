@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Employee extends Person
+{
+    private int employeeID;
+
+    public Employee(String name,String Address,int age,String Email,int employeeID)
+    {
+        super(name,Address,Email,age);
+        this.employeeID=employeeID;
+    }
+    public Employee()
+    {
+        super();
+    }
+    public Employee(Employee employee)
+    {
+        super(employee);
+        this.employeeID=employee.employeeID;
+    }
+    public void setter()
+    {
+        Scanner sc =new Scanner(System.in);
+        super.setter();
+        System.out.println("Enter Employee ID : ");
+        employeeID=sc.nextInt();
+    }
+    public void display()
+    {
+        super.display();
+        System.out.println("Employee is : "+employeeID);
+        
+    }
+    public int getEmployeeID() {
+        return employeeID;
+    }
+}
