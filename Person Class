@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+
+
+public class Person {
+    
+    private String name;
+    private String Address;
+    private String Email;
+    private int age;
+
+    public Person()
+    {
+        name=null;
+        Address=null;
+        Email=null;
+        age=0;
+
+    }
+    public Person(String name,String Address,String Email,int age)
+    {
+        this.name=name;
+        this.Address=Address;
+        this.Email=Email;
+        this.age=age;
+    }
+    public Person(Person person)
+    {
+        this.name=person.name;
+        this.age=person.age;
+        this.Address=person.Address;
+        this.Email=person.Email;
+    }
+    public void setter()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Name : ");
+        name=sc.nextLine();
+        System.out.println("Enter the Address : ");
+        Address=sc.nextLine();
+        System.out.println("Enter the Age : ");
+        age=sc.nextInt();
+        System.out.println("Enter the Email : ");
+        Email=sc.nextLine();
+    }
+    public void display()
+    {
+        System.out.println("Name is : "+name);
+        System.out.println("Age is : "+age);
+        System.out.println("Address is : "+Address);
+        System.out.println("Email is : "+Email);
+    }
+    public String getName() {
+        return name;
+    }
+    public String getAddress() {
+        return Address;
+    }
+    public String getEmail() {
+        return Email;
+    }
+    public int getAge() {
+        return age;
+    }
+    
+}
