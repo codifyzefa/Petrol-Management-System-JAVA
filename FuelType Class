@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class fuelType 
+{
+    private int fuelID;
+    private String fuelName;
+    private double pricePerlitre;
+    
+    public fuelType(int fuelID,String fuelName,double pricePerLitre)
+    {
+        this.fuelID=fuelID;
+        this.fuelName=fuelName;
+        this.pricePerlitre=pricePerLitre;
+    }
+    public fuelType()
+    {
+        fuelID=0;
+        fuelName=null;
+        pricePerlitre=0.0;
+
+    }
+    public void setter()
+    {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter Fuel - ID : ");
+        fuelID=sc.nextInt();
+        System.out.println("Enter Fuel - Name : ");
+        fuelName=sc.nextLine();
+        System.out.println("Enter Price-Per-Litre : ");
+        pricePerlitre=sc.nextDouble();
+    }
+    public void display()
+    {
+        System.out.println("FuelID is : "+fuelID);
+        System.out.println("FuelName is : "+fuelName);
+        System.out.println("Fuel PricePerLitre : "+pricePerlitre);
+    }
+    public int getFuelID() {
+        return fuelID;
+    }
+    public String getFuelName() {
+        return fuelName;
+    }
+    public double getPricePerlitre() {
+        return pricePerlitre;
+    }
+    
+}
